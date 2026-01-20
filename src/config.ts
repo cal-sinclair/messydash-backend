@@ -19,7 +19,14 @@ if (!parsed.success) {
 
 export const config = parsed.data;
 
-// Log warning if no API key is configured
+// Security check: Require API_KEY in production
+if (config.NODE_ENV === 'production' && !config.API_KEY) {
+  console.error('❌ FATAL: API_KEY must be set in production environment.');
+  process.exit(1);
+}
+
+// Log warning if no API key is configured in non-production
 if (!config.API_KEY) {
-  console.warn('⚠️  No API_KEY configured - authentication is disabled!');
+  console.warn('⚠️  WARNING: No API_KEY configured. Authentication is disabled!');
+  console.warn('⚠️  This is only acceptable for local development.');
 }
