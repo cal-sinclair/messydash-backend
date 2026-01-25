@@ -15,7 +15,7 @@ async function main() {
 
     console.log('');
     console.log('╔════════════════════════════════════════════════════════════╗');
-    console.log('║                   MessyDash Backend v2.1                   ║');
+    console.log('║                   MessyDash Backend                        ║');
     console.log('╠════════════════════════════════════════════════════════════╣');
     console.log(`║  🚀 Server running at http://${config.HOST}:${config.PORT}`.padEnd(63) + '║');
     console.log(`║  📡 WebSocket at ws://${config.HOST}:${config.PORT}/api/v1/ws`.padEnd(63) + '║');
